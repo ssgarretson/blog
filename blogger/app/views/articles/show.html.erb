@@ -5,6 +5,9 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p><br>
+<% if @article.image.exists? %>
+  <%= image_tag @article.image.url(:medium) %><br />
+<% end %>
 <h6><%= @article.body %></h6ss><br>
 <p>
   <%= link_to "edit", edit_article_path(@article) %>
